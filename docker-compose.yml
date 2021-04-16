@@ -11,7 +11,7 @@ volumes:
 services:
 
   telegraf:
-    image: telegraf:latest
+    image: telegraf-ipmi:latest
     container_name: telegraf
     volumes:
       - "./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf"
@@ -58,6 +58,7 @@ services:
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
       - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_INSTALL_PLUGINS=briangann-gauge-panel
     restart: unless-stopped
     expose:
       - 3000
