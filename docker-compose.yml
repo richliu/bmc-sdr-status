@@ -11,10 +11,10 @@ volumes:
 services:
 
   telegraf:
-    image: telegraf:1.16
+    image: telegraf:latest
     container_name: telegraf
     volumes:
-      - "/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf"
+      - "./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf"
     restart: unless-stopped
     networks:
       - monitor-net
