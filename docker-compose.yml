@@ -10,6 +10,18 @@ volumes:
 
 services:
 
+  telegraf:
+    image: telegraf:1.16
+    container_name: telegraf
+    volumes:
+      - "/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf"
+    restart: unless-stopped
+    networks:
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
+      
+
   prometheus:
     image: prom/prometheus:v2.26.0
     container_name: prometheus
