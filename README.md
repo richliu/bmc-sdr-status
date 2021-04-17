@@ -44,4 +44,4 @@ Grafana is preconfigured with dashboards and Prometheus as the default data sour
 * Access: Server
   
 ## Screenshot 
-![screenshot](https://raw.githubusercontent.com/richliu/bmc-sdr-status/master/screens/Ampere_Altra_Bmc.png)
+![screenshot](https://github.com/richliu/bmc-sdr-status/raw/main/screens/Ampere_Altra_Bmc.png)
