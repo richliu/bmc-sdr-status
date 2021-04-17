@@ -9,7 +9,22 @@ Also thank [dockprom](https://github.com/stefanprodan/dockprom) inspire me to bu
 Clone bmc-sdr-status from github 
 ```bash
 git clone https://github.com/richliu/bmc-sdr-status.git
+cd bmc-sdr-status
 ```
+
+# Build Docker Image
+
+Install docker first on your Linux platform, for example, ubuntu 
+```bash
+sudo snap install docker
+```
+
+Next step is to build telegraf docker image by yourself. 
+```bash
+bash build-telegraf.sh
+```
+
+It will download latest telegraf docker image and build it. 
 
 # Configure Ampere Altra BMC Server
 
@@ -19,17 +34,10 @@ There are two pre-configure server, ADMIN:ADMIN is your BMC web/ipmi login usern
 ```
 servers = ["ADMIN:ADMIN@lan(192.168.110.234)", "ADMIN:ADMIN@lan(192.168.3.157)" ]
 ```
-## Install
+## Run Services
 
-Install docker first on your Linux platform, for example, ubuntu 
+In directory bmc-sdr-status, run command below
 ```bash
-sudo snap install docker
-```
-
-Clone bmc-sdr-status from github 
-```bash
-cd bmc-sdr-status
-
 docker-compose up -d
 ```
 
