@@ -50,6 +50,15 @@ Grafana is preconfigured with dashboards and Prometheus as the default data sour
 * Type: Prometheus
 * Url: http://prometheus:9090
 * Access: Server
-  
+
+## Clear Prometheus Data Base 
+
+If you change parameter and run script several times, grafana will fetch the same data twice from different host. All prometheus data base store in docker volume. 
+So, suggest to clear prometheus data base before run it. Run command below to clear promethrus docker volume. 
+```bash 
+docker volume rm bmc-sdr-status_prometheus_data
+```
+
+
 ## Screenshot 
 ![screenshot](https://github.com/richliu/bmc-sdr-status/raw/main/screens/Ampere_Altra_Bmc.png)
