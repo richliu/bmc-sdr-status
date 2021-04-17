@@ -12,21 +12,21 @@ git clone https://github.com/richliu/bmc-sdr-status.git
 cd bmc-sdr-status
 ```
 
-# Build Docker Image
+## Build Docker Image
 
 Install docker first on your Linux platform, for example, ubuntu 
 ```bash
 sudo snap install docker
 ```
 
-Next step is to build telegraf docker image by yourself. 
+Original telegraf docker images doesn't have ipmitool package, it needs to build docker image to add it on your machine, so, next step is to build telegraf docker image by yourself. 
 ```bash
 bash build-telegraf.sh
 ```
 
 It will download latest telegraf docker image and build it. 
 
-# Configure Ampere Altra BMC Server
+## Configure Ampere Altra BMC Server
 
 Modify file bmc-sdr-status/telegraf/telegraf.conf, and section ```[[inputs.ipmi_sensor]]```
 
